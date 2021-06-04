@@ -1,0 +1,49 @@
+body {
+    background-image: url("images/skyscape.jpg");
+    text-align: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+  }
+
+#duck {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+#bing {
+    font-family: 'Open Sans', sans-serif;
+}
+
+#google {
+    font-family: 'Roboto', sans-serif;
+}
+
+#ask {
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+}
+
+
+form {
+    display: inline-block;
+    padding-top: 50px;
+}
+
+h1 {
+    font-family: 'Amatic SC', cursive;
+    padding-top: 25px;
+    font-size: 48px;
+}
+
+button {
+    margin-left: 10px;
+    background-color:blanchedalmond;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

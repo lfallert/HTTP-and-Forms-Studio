@@ -1,19 +1,85 @@
 <!doctype html>
 
 <head>
+	<link rel="stylesheet" href="styles.css">
+	<!--Montserrat Font-->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+	<!--Open Sans Font-->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">	
+	<!--Roboto Font-->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+	<!--Open Sans Italic-->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap" rel="stylesheet">
+	<!--H1 Font/Amatic-->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
 	<meta charset="utf-8">
 	<script>
 		// TODO: create a handler
+		function setSearchEngine () {
+			
+			let actions = {
+				"google": "https://www.google.com/search",
+				"duckDuckGo": "https://duckduckgo.com/",
+				"bing": "https://www.bing.com/",
+				"ask": "https://www.ask.com/web"
+			}
+
+			let form = document.getElementById('searchForm');
+			let selectedEngine = document.querySelector('[name=engine]:checked');
+			let action = actions[selectedEngine.value];
+			form.setAttribute('action', action);
+		}
     window.addEventListener("load", function(){
         // TODO: register the handler
+		let form = document.getElementById('searchForm');
+		form.addEventListener('submit', setSearchEngine);
+		
+		
+
+		form.addEventListener("submit", function(event) {
+         let searchInput = document.querySelector("input[name=q]");
+		 let engineInput = document.getElementsByName("radio[name=engine");
+
+		 if (searchInput.value === "" || engineInput.checked === "") {   
+         // alert the current value found in the username input
+        	alert("Search word and engine required.");
+		 }
+
+      });
+
     });
+
 	</script>
 </head>
 
 <body>
-
+	<h1>Find Whatever You Need.</h1>
+	<!-- TODO: add form elements -->
 	<form id="searchForm">
-    <!-- TODO: add form elements -->
+		<input type="text" name="q"/>
+		<label id="google">
+			<input type="radio" name="engine" value="google" />
+			Google
+		</label>
+		<label id="duck">
+			<input type="radio" name="engine" value="duckDuckGo"/>
+			DuckDuckGo
+		</label>
+		<label id="bing">
+			<input type="radio" name="engine" value="bing" />
+			bing
+		</label>
+		<label id="ask">
+			<input type="radio" name="engine" value="ask" />
+			Ask
+		</label>
+		<button value="go" >Go!</button>
+    
 	</form>
 
 </body>
